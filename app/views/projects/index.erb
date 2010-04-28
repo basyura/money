@@ -1,0 +1,9 @@
+<div style="text-align:right;background-color:#f0f0f0;padding:10px;border:1px solid gray;">
+  <a href="<%= new_project_path %>">create project</a>
+</div>
+<h1>Project List</h1>
+<ul>
+  <% @projects.each do |project| %>
+    <li><a href="<%= show_project_path(project.user_id , project.id) %>"><%= project.name %></a></li>
+  <% end %>
+</ul>

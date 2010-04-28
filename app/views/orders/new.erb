@@ -1,0 +1,35 @@
+<div style="text-align:right;background-color:#f0f0f0;padding:10px;border:1px solid gray;">
+<a href="<%= show_project_path(params[:user_id] , params[:project_id]) %>">back</a>
+</div>
+<h1>Create Order</h1>
+<div>
+  <h3><%= params[:user_id] %> / <%= params[:project_id] %></h3>
+</div>
+<div>
+<%= form_for(@order , :url => create_order_path) do |f| %>
+  <div class="field">
+    <%= f.label :num %><br />
+    <%= f.text_field :num %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= f.text_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br />
+    <%= f.text_field :end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+

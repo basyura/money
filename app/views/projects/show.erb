@@ -1,0 +1,28 @@
+<div style="text-align:right;background-color:#f0f0f0;padding:10px;border:1px solid gray;">
+<a href="<%= index_project_path %>">home</a>
+</div>
+<h1><%= @project.name %></h1>
+<div>
+  <a href="<%= new_order_path %>">add order</a>
+</div>
+<p class="notice"><%= notice %></p>
+<ul>
+<table>
+  <tr>
+    <th>num</th>
+    <th>order</th>
+    <th>amount</th>
+    <th>start</th>
+    <th>end</th>
+  </tr>
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.num   %></td>
+    <td><%= order.name   %></td>
+    <td><%= order.amount %></td>
+    <td><%= order.start  %></td>
+    <td><%= order.end    %></td>
+  </tr>
+<% end %>
+</table>
+

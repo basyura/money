@@ -1,0 +1,13 @@
+<div style="text-align:right;background-color:#f0f0f0;padding:10px;border:1px solid gray;">
+<a href="<%= index_project_path %>">back</a>
+</div>
+<%= form_for(@project , :url => create_project_path) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
