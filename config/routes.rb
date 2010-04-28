@@ -1,15 +1,19 @@
 Money::Application.routes.draw do |map|
-  #resources :users
 
   #get "home/index"
+  #
+  match 'regist'        , :to => 'regist#index'
+  match 'regist/create' , :to => 'regist#create' , :as => 'create_regist'
 
   match ':user_id'             , :to => 'users#show'   , :as => 'user'
   match ':user_id/edit'        , :to => 'users#edit'   , :as => 'edit_user'
   match ':user_id/update'      , :to => 'users#update' , :as => 'update_user'
+
   match ':user_id/project/'            , :to => 'projects#index'  , :as => 'index_project'
   match ':user_id/project/new'         , :to => 'projects#new'    , :as => 'new_project'
   match ':user_id/project/create'      , :to => 'projects#create' , :as => 'create_project'
   match ':user_id/project/:project_id' , :to => 'projects#show'   , :as => 'show_project'
+
   match ':user_id/project/:project_id/order/new'    , :to => 'orders#new'     , :as => 'new_order'
   match ':user_id/project/:project_id/order/create' , :to => 'orders#create'  , :as => 'create_order'
   match ':user_id/project/:project_id/order/ok'     , :to => 'orders#ok'      , :as => 'ok_order'
